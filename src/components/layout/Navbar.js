@@ -2,29 +2,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-const Navbar = ({ icon, title }) => {
-
+const Navbar = props => {
   return (
     <nav className='navbar bg-primary'>
-      <h1><i className={icon} />{title}</h1>
+      <h1><i className={props.icon}></i> {props.title}</h1>
       <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about'>About</Link></li>
       </ul>
+
     </nav>
   )
 }
 Navbar.defaultProps = {
-  title: 'From Default',
-  icon: 'Default icon'
-};
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
+  icon: 'fa fa-simplybuilt',
+  title: 'Navbar'
 }
-
+Navbar.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+}
 export default Navbar

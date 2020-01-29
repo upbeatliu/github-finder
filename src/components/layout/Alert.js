@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const Alert = ({ alert }) => {
+export const Alert = ({ alert }) => {
   return (
-    alert !== null && <div className={`alert alert-${alert.type}`}>
-      <i className='fa fa-lightbulb-o'></i>{alert.meg}
-    </div>
+    alert !== null && (<div className={`alert alert-${alert.type}`}>
+      <i className='fas fa-info-circle'></i>{alert.meg}
+    </div>)
   )
 }
-
-export default Alert
+export default Alert;
